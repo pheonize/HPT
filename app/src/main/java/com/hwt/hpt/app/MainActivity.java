@@ -1,18 +1,17 @@
 package com.hwt.hpt.app;
 
-import android.app.Activity;
+import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Spinner;
 import android.widget.AdapterView;
-import android.widget.TextView;
 
 import com.hwt.hpt.app.database.MyDBhelper;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends ListActivity {
 
     private Spinner countryFrom,countryTo;
     private String strCountryFrom , strCountryTo;
@@ -20,7 +19,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
 
 
 
@@ -46,6 +45,17 @@ public class MainActivity extends Activity {
 
 
     private void initMenu() {
+
+       MainMenu mainMenu[] = new MainMenu[]{
+               new MainMenu(R.drawable.conversation,"Basic Conversation"),
+               new MainMenu(R.drawable.thing,"I would like to..."),
+               new MainMenu(R.drawable.place ,"Where is the..."),
+               new MainMenu(R.drawable.help,"Assistance/Emergency"),
+               new MainMenu(R.drawable.logistic,"Logistics")
+       };
+
+        MainMenuAdapter mainMenuAdapter = new MainMenuAdapter(this,R.layout.menu_item,mainMenu);
+        setListAdapter(mainMenuAdapter);
 
 
     }
