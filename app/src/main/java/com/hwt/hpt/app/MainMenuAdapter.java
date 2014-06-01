@@ -16,7 +16,7 @@ public class MainMenuAdapter extends ArrayAdapter<MainMenu> {
 
     private Context context;
     private int itemLayoutId;
-    private com.hwt.hpt.app.MainMenu mainMenus[] = null;
+    private MainMenu mainMenus[] = null;
 
     public MainMenuAdapter(Context context, int itemLayoutId, com.hwt.hpt.app.MainMenu[] mainMenu) {
         super(context, itemLayoutId, mainMenu);
